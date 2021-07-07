@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Livro Git GitHub</title>
+    <style>
+       
+    </style>
+</head>
+<body onload="trocarBanner()">
+    <h2 id="mensagem">texto</h2>
+    <button id="btn">para de piscar</button>
+    <button id="btnPiscar">Começar a piscar</button>
+    
+    <script>
+        let banners = ['texto exemplo']
+        let bannerAtual = 0
+        let button = document.getElementById("btn")
+        let buttonPiscar = document.getElementById("btnPiscar")
+
+        function trocarBanner(){
+            bannerAtual = (bannerAtual + 1) % 2 
+            document.querySelector('h2#mensagem').textContent = banners[bannerAtual]
+        }
+
+        let tempo = setInterval(trocarBanner, 1000)
+
+        button.addEventListener('click', ()=> {
+            clearInterval(tempo)
+        })
+
+        buttonPiscar.addEventListener('click', ()=> {
+             tempo = setInterval(trocarBanner, 1000)
+        })
+    </script>
+</body>
+</html>
