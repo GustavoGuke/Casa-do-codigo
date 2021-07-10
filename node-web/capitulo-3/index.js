@@ -9,6 +9,12 @@ app.get('/',(req,res) => {
     res.send('Servidor com express')
 })
 
+app.get('/about',(req,res) => {
+    res.type('text/plain')
+    res.status(200)
+    res.send('About')
+})
+
 app.use((req,res) => {
     res.type('text/plain')
     res.status(404)
