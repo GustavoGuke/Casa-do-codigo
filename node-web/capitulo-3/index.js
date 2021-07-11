@@ -1,32 +1,30 @@
 import express from 'express'
+import expressHandlebars from 'express-handlebars'
 
 const app = express()
 const PORT = 3000
 
+
+app.engine('handlebars', expressHandlebars({defaultLayout:'main'}))
+app.set('view engine', 'handlebars')
+
 app.get('/',(req,res) => {
-    res.type('text/plain')
-    res.status(200)
-    res.send('Servidor com express')
+    res.render('home')
 })
 
 app.get('/about',(req,res) => {
-    res.type('text/plain')
-    res.status(200)
-    res.send('About')
+    res.render('about')
 })
 
 app.use((req,res) => {
-    res.type('text/plain')
     res.status(404)
-
-    res.send('404 - NOT FOUND')
+    res.render('404')
 })
 
 app.use((err,req,res,next) => {
     console.log(err)
-    res.type('text/plain')
     res.status(500)
-    res.send("500 - SERVER ERROR")
+    res.send('500')
 })
 
 app.listen(PORT, () => console.log('Server ok na porta'+PORT))
