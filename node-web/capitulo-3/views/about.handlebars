@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Page About</h1>
+
+    {{#if fortune}}
+    <p>Your fortune for the day:</p>
+    <blockquote>{{fortune}}</blockquote>
+    {{/if}}
 </body>
 </html>
