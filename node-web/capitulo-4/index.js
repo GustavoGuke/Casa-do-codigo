@@ -1,16 +1,9 @@
-import express from 'express'
-import expressHandlebars from 'express-handlebars'
+import express from 'express';
+import expressHandlebars from 'express-handlebars';
+import fortune from './lib/fortune.js'
 
 const app = express()
 const PORT = 3000
-
-const fortunes = [
-    'conquer your fears or they will conquer you',
-    'Rivers need springs',
-    'Do not fear what you don´t know',
-    'You will have a pleasant surprise',
-    'Whenever possible, keep it simple'
-]
 
 app.engine('handlebars', expressHandlebars({defaultLayout:'main'}))
 app.set('view engine', 'handlebars')
@@ -20,8 +13,7 @@ app.get('/',(req,res) => {
 })
 
 app.get('/about',(req,res) => {
-    const ramdomFortune = fortunes[Math.floor(Math.random()*fortunes.length)]
-    res.render('about', {fortune: ramdomFortune})
+    res.render('about', {fortune: fortune()})
 })
 
 app.use((req,res) => {
