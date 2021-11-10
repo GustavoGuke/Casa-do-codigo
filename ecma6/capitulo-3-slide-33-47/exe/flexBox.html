@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex Box</title>
+
+    <style>
+        .container{
+            display: grid;
+            margin: auto;
+            width: 80%;
+            height: 300px;
+            background-color: beige;
+        }
+        ul{ 
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            background-color: brown;
+            margin-bottom: 0;
+            padding: 0;
+            height: 50px;
+            
+            
+            
+        }
+        .def{
+            padding-right: 20px;
+            padding-left: 20px;
+            list-style: none;
+            
+            
+        }
+        .lg{
+            flex: 1 ;
+            background-color: aquamarine;
+
+        }
+        .hm{
+            background-color: blue;
+        }
+        a{
+            text-decoration: none;
+        }
+        section.p{
+            background-color: aqua;
+            margin: 10px;
+            padding-left:20px ;
+            text-align: left;
+        }
+        section.he{
+            background-color: black;
+            margin: 10px;
+        }
+        p{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <section class="he">
+            <ul>
+                <li class="lg def">
+                    <a href="#">Logo</a>
+                </li>
+                <li class="hm def" >
+                    <a href="#">home</a>
+                </li>
+                <li class="nt def">
+                    <a href="#">Noticias</a>
+                </li>
+                <li class="ct def">
+                    <a href="#">Contato</a>
+                </li>
+            </ul>
+        </section>
+       
+        
+        <section class="p">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt quae, maiores in totam veniam suscipit cum. Placeat autem iure aperiam accusamus consequatur quibusdam nulla perspiciatis beatae! Perferendis unde optio earum?
+            </p>
+        </section>
+    </div>
+</body>
+</html>
